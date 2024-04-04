@@ -2,22 +2,22 @@ version: '3.8'
 
 services:
   backend:
-    image: chahrazed123/alpine:1.0.2
+    image: chahrazed123/backend:1.0.0
     ports:
       - "8082:8082"
     depends_on:
       - mysql
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/devops?createDatabaseIfNotExist=true
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=
-      - SPRING_JPA_SHOW_SQL=true
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect
 
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devops
+      MYSQL_USER: devops
+      MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
+  frontend:
+    image: chahrazed123/frontend:1.0.0
+    ports:
+      - "4200:4200"
