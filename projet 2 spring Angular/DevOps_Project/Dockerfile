@@ -1,5 +1,5 @@
 FROM alpine
 RUN apk add openjdk17
 EXPOSE 8082
-COPY DevOps_Project-1.0.jar /DevOps_Project-1.0.jar
+COPY target/DevOps_Project-1.0.jar /DevOps_Project-1.0.jar
 CMD ["java", "-jar", "/DevOps_Project-1.0.jar"]
