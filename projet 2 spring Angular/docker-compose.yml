@@ -9,10 +9,6 @@ services:
     depends_on:
       - mysql_db # Ensure MySQL container starts before the Spring Boot ap
 
-  spring_app_frontend:
-    image: image_frontend:1.0.0 # Update with your Docker image name and tag
-    ports:
-      - "4200:4200"
 
   mysql_db:
     image: mysql:5.7
@@ -23,3 +19,8 @@ services:
       MYSQL_DATABASE: devops # Create a database named 'mydatabase'
       MYSQL_USER: devops
       MYSQL_PASSWORD: root
+
+  spring_app_frontend:
+    image: image_frontend:1.0.0 # Update with your Docker image name and tag
+    ports:
+      - "4200:4200"
