@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  backend:
+    image: hedimarzouk/devops_project1:latest
+    ports:
+      - "8085:8085"
+    environment:
+      - SPRING_PROFILES_ACTIVE=production
+    networks:
+      - devops-network
+    restart: always
+
+networks:
+  devops-network:
+    driver: bridge
