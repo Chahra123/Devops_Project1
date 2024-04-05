@@ -7,7 +7,7 @@ services:
     ports:
       - "8082:8082" # Map container port 8080 to host port 8080
     depends_on:
-      - mysql # Ensure MySQL container starts before the Spring Boot ap
+      - mysql_db # Ensure MySQL container starts before the Spring Boot ap
 
   spring_app_frontend:
     image: image_frontend:latest # Update with your Docker image name and tag
