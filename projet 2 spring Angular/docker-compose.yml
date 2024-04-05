@@ -21,3 +21,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root # Set the MySQL root password
       MYSQL_DATABASE: devops # Create a database named 'mydatabase'
+      MYSQL_USER: devops
+      MYSQL_PASSWORD: root
