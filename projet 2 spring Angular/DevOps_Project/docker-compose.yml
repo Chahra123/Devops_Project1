@@ -1,6 +1,13 @@
 version: '2'
 
 services:
+ db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devops
+      MYSQL_USER: devops
+      MYSQL_PASSWORD: root
   backend:
     image: hedimarzouk/devops_project1:latest
     ports:
